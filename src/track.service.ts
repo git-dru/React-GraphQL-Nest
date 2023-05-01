@@ -19,7 +19,7 @@ export class TrackService {
       trackInput;
     return new Promise<TrackOutput[]>((resolve, reject) => {
       this.db.all(
-        `SELECT *, Genre.Name as GenreName, Artist.Name as ArtistName, Track.Name as TrackName
+        `SELECT Track.TrackId, Track.Name as TrackName, Track.Milliseconds, track.UnitPrice, Genre.Name as GenreName, Artist.Name as ArtistName
               From Track 
               LEFT JOIN Album ON Track.AlbumId= Album.AlbumId
               JOIN Artist ON Album.ArtistId = Artist.ArtistId
