@@ -128,9 +128,9 @@ function App() {
                     <th>Track ID</th>
                     <th>Track Name</th>
                     <th>Artist Name</th>
+                    <th>Genre Name</th>
                     <th>Price</th>
                     <th>Duration</th>
-                    <th>Genre Name</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -140,9 +140,9 @@ function App() {
                       <td>{track.id}</td>
                       <td>{track.name}</td>
                       <td>{track.artist.name}</td>
+                      <td>{track.genre}</td>
                       <td>{track.price}</td>
                       <td>{track.duration}</td>
-                      <td>{track.genre}</td>
                     </tr>
                   ))}
                 </tbody>
