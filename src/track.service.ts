@@ -25,7 +25,7 @@ export class TrackService {
               JOIN Artist ON Album.ArtistId = Artist.ArtistId
               LEFT JOIN MediaType ON Track.MediaTypeId = MediaType.MediaTypeId
               LEFT JOIN Genre ON Track.GenreId= Genre.GenreId
-              where Artist.Name like '%${artistName}%' and Genre.Name like '%${genreName}%' and Track.UnitPrice >= ${minPrice} and Track.UnitPrice <= ${maxPrice}
+              where Artist.Name like '%${artistName}%' and Genre.Name like '%${genreName}%' and Track.UnitPrice >= ${minPrice} and Track.UnitPrice < ${maxPrice}
               ORDER BY  Track.TrackId ASC
               LIMIT ${pageSize} OFFSET ${(page - 1) * pageSize}`,
         (error, data: TrackOutput[]) => {
