@@ -15,5 +15,5 @@ export class Track {
   duration: number;
 
   @Field()
-  genre: number;
+  genre: string;
 }
