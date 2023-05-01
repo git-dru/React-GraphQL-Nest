@@ -50,7 +50,7 @@ export class TrackResolver {
   @Query(() => Number)
   async getCount(@Args('input') input: TrackInput): Promise<number> {
     const [{ count }] = await this.trackService.getCount(input);
-    return count;
+    return Math.ceil(count / input.pageSize);
   }
 
   @Query(() => [Track])
@@ -62,6 +62,7 @@ export class TrackResolver {
       price: t.UnitPrice,
       duration: t.Milliseconds / 1000,
       genre: t.GenreName,
+      artist: { id: t.ArtistId, name: t.ArtistName },
     }));
   }
 }

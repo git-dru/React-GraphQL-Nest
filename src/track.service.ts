@@ -9,6 +9,7 @@ export interface TrackOutput {
   UnitPrice: number;
   ArtistName: string;
   Milliseconds: number;
+  ArtistId: number;
 }
 
 export interface CountOutput {
@@ -42,7 +43,7 @@ export class TrackService {
       trackInput;
     return new Promise<TrackOutput[]>((resolve, reject) => {
       this.db.all(
-        `SELECT Track.TrackId, Track.Name as TrackName, Track.Milliseconds, track.UnitPrice, Genre.Name as GenreName, Artist.Name as ArtistName
+        `SELECT Track.TrackId, Track.Name as TrackName, Track.Milliseconds, track.UnitPrice, Genre.Name as GenreName, Artist.Name as ArtistName, Artist.ArtistId as ArtistId
               From Track 
               LEFT JOIN Album ON Track.AlbumId= Album.AlbumId
               JOIN Artist ON Album.ArtistId = Artist.ArtistId

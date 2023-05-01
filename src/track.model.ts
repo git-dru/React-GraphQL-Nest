@@ -1,5 +1,5 @@
 import { Field, ObjectType } from '@nestjs/graphql';
-
+import { Artist } from './artist.model';
 @ObjectType()
 export class Track {
   @Field()
@@ -16,4 +16,7 @@ export class Track {
 
   @Field()
   genre: string;
+
+  @Field(() => Artist)
+  artist: Artist;
 }
