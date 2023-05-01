@@ -1,0 +1,47 @@
+.App {
+  text-align: center;
+}
+
+/* css */
+.pagition_main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  position: relative;
+}
+
+.pagition_main .first_erow_btn {
+  border: 0.5px solid #dadada !important;
+  box-shadow: 2.81818px 5.63636px 14.0909px rgba(227, 248, 128, 0.2),
+    0px 5.63636px 14.0909px rgba(138, 248, 173, 0.2);
+  border-radius: 6px;
+  margin-right: 14px;
+}
+.pagition_main .first_erow_btn::before {
+  display: none;
+}
+
+.pagition_main .margin_left {
+  margin: 0 0 0 3px !important;
+}
+.pagition_main .one_btn {
+  border-radius: 6px;
+  margin-right: 11px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  padding: 20px;
+}
+.pagition_main .three_dots {
+  font-weight: 500;
+  font-size: 14px;
+  text-align: center;
+  color: #000;
+  margin: 0 11px 0 0px;
+}
+
+.active {
+  background-color: #61dafb;
+}
