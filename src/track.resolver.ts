@@ -47,6 +47,12 @@ export class TrackInput {
 export class TrackResolver {
   constructor(private readonly trackService: TrackService) {}
 
+  @Query(() => Number)
+  async getCount(@Args('input') input: TrackInput): Promise<number> {
+    const [{ count }] = await this.trackService.getCount(input);
+    return count;
+  }
+
   @Query(() => [Track])
   async getTracks(@Args('input') input: TrackInput): Promise<Track[]> {
     const tracks = await this.trackService.getTracks(input);
