@@ -27,7 +27,7 @@ export class TrackService {
               LEFT JOIN Genre ON Track.GenreId= Genre.GenreId
               where Artist.Name like '%${artistName}%' and Genre.Name like '%${genreName}%' and Track.UnitPrice >= ${minPrice} and Track.UnitPrice < ${maxPrice}
               ORDER BY  Track.TrackId ASC
-              LIMIT ${pageSize} OFFSET ${(page - 1) * pageSize}`,
+              LIMIT ${pageSize} OFFSET ${page * pageSize}`,
         (error, data: TrackOutput[]) => {
           if (error) reject(error);
           else resolve(data);
